@@ -6,8 +6,8 @@ on:
 
 jobs:
   check-bats-version:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment != 'production'
     runs-on: ubuntu-latest
     steps:
-      - run: echo github.ref is ${{ github.ref }}
       - run: echo github.event.deployment_status.state is ${{ github.event.deployment_status.state }}
       - run: echo github.event.deployment.environment is ${{ github.event.deployment.environment }}
