@@ -68,6 +68,9 @@ export default function Home() {
           <p>
             commit 1
           </p>
+          <p>
+            commit 2
+          </p>
         </a>
 
         <a
