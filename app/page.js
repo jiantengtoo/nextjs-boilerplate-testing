@@ -65,6 +65,9 @@ export default function Home() {
             Learn about Next.js in an interactive course with&nbsp;quizzes! Dev
             build test
           </p>
+          <p>
+            commit 1
+          </p>
         </a>
 
         <a
