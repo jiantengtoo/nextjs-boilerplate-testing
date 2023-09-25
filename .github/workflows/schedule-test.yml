@@ -1,28 +1,28 @@
-name: Merge dev into main
+# name: Merge dev into main
 
-on:
-  schedule:
-    - cron: "0 20 * * *"
+# on:
+#   schedule:
+#     - cron: "0 20 * * *"
 
-jobs:
-  merge:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Fetch dev branch
-        run: git fetch origin dev
-      - name: Check if main is up to date with dev
-        run: git merge-base --is-ancestor HEAD origin/dev || exit 1
-      - name: Merge dev into main using rebase
-        run: git rebase origin/dev
-        env:
-          GIT_COMMITTER_NAME: ${{ github.actor }}
-          GIT_COMMITTER_EMAIL: ${{ github.actor }}@users.noreply.github.com
-      - name: Push changes to main branch
-        uses: ad-m/github-push-action@master
-        with:
-          branch: main
-          force: true
+# jobs:
+#   merge:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout main branch
+#         uses: actions/checkout@v2
+#         with:
+#           ref: main
+#       - name: Fetch dev branch
+#         run: git fetch origin dev
+#       - name: Check if main is up to date with dev
+#         run: git merge-base --is-ancestor HEAD origin/dev || exit 1
+#       - name: Merge dev into main using rebase
+#         run: git rebase origin/dev
+#         env:
+#           GIT_COMMITTER_NAME: ${{ github.actor }}
+#           GIT_COMMITTER_EMAIL: ${{ github.actor }}@users.noreply.github.com
+#       - name: Push changes to main branch
+#         uses: ad-m/github-push-action@master
+#         with:
+#           branch: main
+#           force: true
