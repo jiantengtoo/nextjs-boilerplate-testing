@@ -8,7 +8,7 @@ export default function Home() {
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.js</code>
-          test dev branch protection 2
+          test dev branch protection 3
         </p>
         <div>
           <a
